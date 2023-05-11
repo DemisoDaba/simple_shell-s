@@ -1,0 +1,11 @@
+.TH HSH 1 "May 12/2023" "1.0" "Simple_shell User Manual"
+.SH NAME:
+.B hsh - Simple_shell
+.br
+.SH SYNOPSIS:
+.B ./hsh
+[command] [options]
+.br
+.SH COPYRIGHT:
+.B hsh
+is Copyright (C) Demiso Dugassa and Prince Onuh
