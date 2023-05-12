@@ -17,6 +17,7 @@ is Copyright (C) Demiso Dugassa and Prince Onuh
 .SH ARGUMENTS:
 .B exit:
 quits the program.
+
 .B ls:
 list directory contents.
 
