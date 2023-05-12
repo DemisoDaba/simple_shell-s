@@ -9,3 +9,13 @@
 .SH COPYRIGHT:
 .B hsh
 is Copyright (C) Demiso Dugassa and Prince Onuh
+.br
+.SH DESCRIPTION:
+.B hsh
+(Simple Shell) alx se project to learn the operation of simple shell as an initial version.
+.br
+.SH ARGUMENTS:
+.B exit:
+quits the program.
+
+.B ls:
