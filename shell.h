@@ -12,3 +12,4 @@ int stringcmp(char *stringA, char *stringB);
 char *get_user_input();
 
 #endif /* End of shell_h */
+
