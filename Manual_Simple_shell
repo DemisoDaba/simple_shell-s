@@ -19,3 +19,40 @@ is Copyright (C) Demiso Dugassa and Prince Onuh
 quits the program.
 
 .B ls:
+list directory contents.
+
+.B exit:
+quits the program, exits the shell.
+
+.B env:
+prints the environment variables
+
+.br
+.SH EXAMPLE:
+.IP
+
+$./hsh
+
+$pwd
+
+/root/simple_shell
+
+$
+
+$/bin/pwd
+
+/root/simple_shell
+
+$
+
+.br
+.SH SEE ALSO:
+.I sh(1)
+,
+.I bash(1)
+,
+.I _printf(3)
+.br
+.SH BUGS:
+Not known bugs(error), if you find any error; report it to demo.nkmt1@gmail.com
+.br
