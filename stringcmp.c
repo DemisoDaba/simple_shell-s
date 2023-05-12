@@ -1,5 +1,5 @@
 #include "shell.h"
-000
+
 /**
  * stringcmp - Compare two strings similar to strcmp
  * @StringA: The first string to be compared
