@@ -30,3 +30,4 @@ char *get_user_input()
 	}
 	return (user_input);
 }
+
