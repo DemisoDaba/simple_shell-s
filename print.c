@@ -10,7 +10,7 @@
 
 void print(char *string)
 {
-	int BytesToWrite = stringlen(String);
+	int BytesToWrite = stringlen(string);
 	ssize_t TotalBytesWritten = write(STDOUT_FILENO, string, BytesToWrite);
 
 	if (TotalBytesWritten == -1)
