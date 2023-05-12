@@ -1,6 +1,6 @@
 #ifndef shell_h
 #define shell_h
-0000
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
