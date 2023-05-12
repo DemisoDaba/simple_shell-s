@@ -1,5 +1,5 @@
 #include "shell.h"
-000
+
 /**
  * stringlen - Calculate the length of a string
  * @string: The string to calculate the length of
