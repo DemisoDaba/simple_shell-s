@@ -13,7 +13,7 @@
 int stringcmp(char *stringA, char *stringB, int a)
 {
 	int count;
-	
+	000
 	for (count = 0; (count < a) && (stringA[count] != '\0') && (stringB[count] != '\0'); count++)
 	{
 		if (stringA[count] != stringB[count])
