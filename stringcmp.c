@@ -2,8 +2,8 @@
 
 /**
  * stringcmp - Compare two strings similar to strcmp
- * @StringA: The first string to be compared
- * @StringB: The second string to be compared
+ * @stringA: The first string to be compared
+ * @stringB: The second string to be compared
  *
  * Return: 0 if stringA and stringB are exactly equal,
  *         positive value if stringA is greater,

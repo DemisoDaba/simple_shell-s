@@ -8,7 +8,7 @@
 #include <stdbool.h>
 #define BUFFER_SIZE 1024
 
-int stringcmp(char *stringA, char * stringB);
+int stringcmp(char *stringA, char *stringB);
 char *get_user_input();
 
 #endif /* End of shell_h */

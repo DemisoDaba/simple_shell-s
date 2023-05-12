@@ -1,10 +1,13 @@
 #include "shell.h"
 
 /**
- * tokenizeUserInput - Tokenizes a user input string
- * @userInput: The input string to be tokenized
+ * tok_user_input - Tokenizes a string of user input
+ * @user_input: The input string to tokenize
  *
- * Return: An array of strings representing the tokens, or NULL on failure
+ * This function takes a string of user input and tokenizes it based on spaces.
+ * It returns a double pointer to an array of tokens, or NULL on failure.
+ *
+ * Return: A double pointer to an array of tokens, or NULL on failure
  */
 
 char **tok_user_input(char *user_input)
@@ -19,35 +22,31 @@ char **tok_user_input(char *user_input)
 		perror("Malloc failed to allocate memory for storing tokens");
 		return (NULL);
 	}
-	else
-	{
-		currentToken = strtok(user_input, separator);
-		if (currentToken == NULL)
-		{
-			perror("Strtok failed to tokenize user input");
-			free(tokenArray);
-			return (NULL);
-		}
-		else
-		{
 
-			while (currentToken != NULL)
+	currentToken = strtok(user_input, separator);
+	if (currentToken == NULL)
+	{
+		perror("Strtok failed to tokenize user input");
+		free(tokenArray);
+		return (NULL);
+	}
+
+	while (currentToken != NULL)
+	{
+		if (tokenCount == MaxNumOfTok)
+		{
+			MaxNumOfTok = MaxNumOfTok * 2;
+			tokenArray = realloc(tokenArray, MaxNumOfTok * sizeof(char *));
+			if (tokenArray == NULL)
 			{
-				if (tokenCount == MaxNumOfTok)
-				{
-					MaxNumOfTok = MaxNumOfTok * 2;
-					tokenArray = realloc(Tokens, MaxNumOfTok * sizeof(char *));
-					if (tokenArray == NULL)
-					{
-					perror("Realloc failed to reallocate memory for storing token");
-					free(tokenArray);
-					return (NULL);
-					}
-				}
-				Tokens[tokenCount++] = currentToken;
-				currentToken = strtok(NULL, separator);
+				perror("Realloc failed to reallocate memory for storing tokens");
+				free(tokenArray);
+				return (NULL);
 			}
 		}
+		tokenArray[tokenCount++] = currentToken;
+		currentToken = strtok(NULL, separator);
 	}
+
 	return (tokenArray);
 }

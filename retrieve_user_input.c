@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * fetch_user_input - Reads a line of input from the user
+ * get_user_input - Reads a line of input from the user
  *
  * Return: Pointer to the user input string, or NULL on failure
  */
