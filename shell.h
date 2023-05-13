@@ -1,6 +1,7 @@
 #ifndef shell_h
 #define shell_h
 
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -8,8 +9,9 @@
 #include <stdbool.h>
 #define BUFFER_SIZE 1024
 
-int stringcmp(char *stringA, char *stringB);
+int stringcmp(char *stringA, char *stringB, int a);
+char **tokenize(char *user_input, char *delimiter);
+int stringlen(char *string);
+void print(char *string);
 char *get_user_input();
-
 #endif /* End of shell_h */
-
