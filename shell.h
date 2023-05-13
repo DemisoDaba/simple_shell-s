@@ -10,7 +10,7 @@
 #define BUFFER_SIZE 1024
 
 int stringcmp(char *stringA, char *stringB, int a);
-char **tokenize(char *user_input, char *delimiter);
+char **tokenize(char *user_input, char *separator);
 int stringlen(char *string);
 void print(char *string);
 char *get_user_input();
