@@ -5,7 +5,7 @@
  * @user_input: The input string to tokenize
  * @delimiter: The delimiter used for tokenization
  *
- * This function takes a string of user input and tokenizes it based on the specified delimiter.
+ * This function takes a string of user input and tokenizes it
  * It returns a double pointer to an array of tokens, or NULL on failure.
  *
  * Return: A double pointer to an array of tokens, or NULL on failure
