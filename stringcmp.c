@@ -28,4 +28,3 @@ int stringcmp(char *stringA, char *stringB, int a)
 		return (stringA[count] - stringB[count]);
 	}
 }
-
