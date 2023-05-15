@@ -28,7 +28,7 @@ char **tokenize(char *user_input, char *separator)
 
 		if (currentToken == NULL)
 		{
-			/*perror("Strtok failed to tokenize user input");*/
+			perror("Strtok failed to tokenize user input");
 			return (tokenArray);
 		}
 		else
