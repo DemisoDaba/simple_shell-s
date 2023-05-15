@@ -14,7 +14,7 @@ char **full_path(char **tok_path, char **tok_user_input);
 char *stringcpy(char *StringDest, char *StringSource);
 int stringcmp(char *stringA, char *stringB, int a);
 char **tokenize(char *user_input, char *separator);
-int full_length(char **StringsA, char **StringsB);
+int full_length(char **stringsA, char **stringsB);
 char *stringdup(char *StringToDup);
 char **init_envp(char **envp);
 int stringlen(char *string);
