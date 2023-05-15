@@ -1,16 +1,18 @@
 #include "shell.h"
 
 /**
- * get_user_input - Reads a line of input from the user
+ * Retrieves user input from stdin and returns it as a dynamically allocated string.
  *
- * Return: Pointer to the user input string, or NULL on failure
+ * @return  A pointer to the user input string, or NULL if memory allocation fails or an error occurs.
+ *          The returned string is dynamically allocated and should be freed by the caller when no longer needed.
  */
+
 
 char *get_user_input()
 {
-	size_t MAXIMUM_USER_INPUT = BUFFER_SIZE;
+	size_t MAX_USER_INPUT = BUFFER_SIZE;
 	ssize_t user_input_length;
-	char *user_input = malloc(sizeof(char) * MAXIMUM_USER_INPUT);
+	char *user_input = malloc(sizeof(char) * MAX_USER_INPUT);
 
 	if (user_input == NULL)
 	{
@@ -18,16 +20,16 @@ char *get_user_input()
 	}
 	else
 	{
-		user_input_length = getline(&user_input, &MAXIMUM_USER_INPUT, stdin);
+		user_input_length = getline(&user_input, &MAX_USER_INPUT, stdin);
 		if (user_input_length == -1)
-		{
+		{	
+			if (errno == EOF)
+			{
+				perror("exiting.......");
+			}
 			free(user_input);
-			return (NULL);
-			if ((user_input[(user_input_length - 1)] == '\0') ||
-			(user_input[user_input_length - 1] == EOF))
-			user_input[(user_input_length - 1)] = '\0';
+			exit (EXIT_SUCCESS);
 		}
 	}
 	return (user_input);
 }
-
