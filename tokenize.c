@@ -54,4 +54,3 @@ char **tokenize(char *user_input, char *separator)
 	}
 	return (tokenArray);
 }
-
