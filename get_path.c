@@ -1,16 +1,15 @@
 #include "shell.h"
 
 /**
- * get_path - retrieves the value of the PATH environment variable
- * @envp: the array of strings that contains the environment variables
+ * Retrieves the value of the PATH environment variable from the given environment variable array.
  *
- * Return: a pointer to the value of the PATH environment variable,
- * or NULL if it is not found
+ * @param envp   An array of strings representing the environment variables.
+ * @return       A pointer to the value of the PATH variable, or NULL if the PATH variable is not found.
  */
 
 char *get_path(char **envp)
 {
-	char *path;
+	char *path = NULL;
 	int count;
 
 	if (envp == NULL)
@@ -20,7 +19,7 @@ char *get_path(char **envp)
 	}
 	else
 	{
-		for (count = 0; envp[count] != NULL; count++)
+		for(count = 0; envp[count] != NULL; count++)
 		{
 			if ((stringcmp(envp[count], "PATH=", 4)) == 0)
 			{
