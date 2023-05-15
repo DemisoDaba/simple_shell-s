@@ -10,26 +10,16 @@
 
 char *stringcat(char *CompleteString, char *StringToAdd)
 {
-	int countA, countB;
+	int CountA, CountB;
 
-	int length = (stringlen(CompleteString) + stringlen(StringToAdd));
-
-	char *FullString = malloc((length + 1) * sizeof(char));
-
-	if (FullString == NULL)
+	for (CountA = 0; CompleteString[CountA] != '\0'; CountA++)
 	{
-		perror("Malloc() failed to allocate memory to concatenate strings");
-		return (NULL);
 	}
 
-	for (countA = 0; CompleteString[countA] != '\0'; countA++)
+	for (CountB = 0; StringToAdd[CountB] != '\0'; CountB++)
 	{
-		FullString[countA] = CompleteString[countA];
+		CompleteString[CountA++] = StringToAdd[CountB];
 	}
-	for (countB = 0; StringToAdd[countB] != '\0'; countB++)
-	{
-		FullString[countA++] = StringToAdd[countB];
-	}
-	FullString[countA] = '\0';
-	return (FullString);
+	CompleteString[CountA] = '\0';
+	return (CompleteString);
 }
