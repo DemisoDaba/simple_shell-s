@@ -7,7 +7,6 @@
  *          The returned string is dynamically allocated and should be freed by the caller when no longer needed.
  */
 
-
 char *get_user_input()
 {
 	size_t MAX_USER_INPUT = BUFFER_SIZE;
@@ -29,6 +28,10 @@ char *get_user_input()
 			}
 			free(user_input);
 			exit (EXIT_SUCCESS);
+		}
+		if ((user_input[user_input_length - 1] == '\0') || (user_input[user_input_length -1] == '\n'))
+		{
+			user_input[user_input_length] = '\0';
 		}
 	}
 	return (user_input);

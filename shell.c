@@ -1,28 +1,37 @@
 #include "shell.h"
 
+
 int main(int argc, char **argv, char **envp)
 {
-	char *path = get_path(envp);
-	char **tok_path = tokenize(path, ":");
-	char *input;
-	char **token;
+	int CountA;
+	char *Input;
+	char **TokUserInput;
 	char **FullPath;
-	int count, CountB, CountC;
-	(void) argc, (void) argv;
-	while(true)
+	char *Path = get_path(envp);
+	char **TokPath = tokenize(Path, ":\n");
+	char **arg;
+	for (;;)
 	{
-		print("($) ");
-		input = get_user_input();
-		token = tokenize(input, " ");
-		FullPath = full_path(tok_path, token);
-		for (count = 0; FullPath[count] != NULL; count++)
-		{
-			printf("%s", FullPath[count]);
-		}
+		print(" ($) ");
+		Input = get_user_input();
+		TokUserInput = tokenize(Input," \n");
+		FullPath = full(TokPath, *TokUserInput);
+		args(FullPath, TokUserInput, envp);
+	}	
+	for (CountA = 0; TokUserInput[CountA] != NULL; CountA++)
+	{
+		free(TokUserInput[CountA]);
 	}
-	free(path);
-	free(tok_path);
-	free(token);
+	for (CountA = 0; TokPath[CountA] != NULL; CountA++)
+	{
+		free(TokPath[CountA]);
+	}
+	for (CountA = 0; FullPath[CountA] != NULL; CountA++)
+	{
+		free(FullPath[CountA]);
+	}
+	free(Input);
+	free(TokUserInput);
+	free(TokPath);
 	free(FullPath);
-	return (0);
-}
+}	

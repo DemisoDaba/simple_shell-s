@@ -1,0 +1,27 @@
+#include "shell.h"
+
+char **init_envp(char **envp)
+{
+	int CountA, CountB;
+	char **new_envp;
+	
+	for (CountA = 0; envp[CountA] != NULL; CountA++)
+	{
+		
+	}
+	new_envp = malloc((CountA + 1) * sizeof(char *));
+	if (new_envp == NULL)
+	{
+		perror("Malloc() failed to allocate memory to copy env var PATH");
+		return (NULL);
+	}
+	else
+	{
+		for (CountB = 0; envp[CountB] != NULL; CountB++)
+		{
+			new_envp[CountB] = envp[CountB];
+		}
+			new_envp[CountB] = NULL;
+	}	
+	return (new_envp);
+}
