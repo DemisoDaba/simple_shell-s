@@ -25,5 +25,4 @@ char *get_path(char **envp);
 int half_len(char **half);
 void print(char *String);
 char *get_user_input();
-
 #endif /* End of shell_h */
