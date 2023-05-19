@@ -3,23 +3,27 @@
 
 #include <errno.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <string.h>
 #include <stdbool.h>
+#include <sys/wait.h>
 #define BUFFER_SIZE 1024
 
+void args(char **FullPath, char **TokUserInput, char **envp);
 char *stringcat(char *CompleteString, char *StringToAdd);
 char **full_path(char **tok_path, char **tok_user_input);
 char *stringcpy(char *StringDest, char *StringSource);
-int stringcmp(char *stringA, char *stringB, int a);
-char **tokenize(char *user_input, char *separator);
-int full_length(char **stringsA, char **stringsB);
+char **tokenize(char *user_input, char *delimiter);
+int stringcmp(char *StringA, char *StringB, int a);
+int full_length(char **StringsA, char **StringsB);
+char **full(char **TokPath, char *TokUserInput);
 char *stringdup(char *StringToDup);
 char **init_envp(char **envp);
-int stringlen(char *string);
+int stringlen(char *String);
 char *get_path(char **envp);
-void print(char *string);
+int half_len(char **half);
+void print(char *String);
 char *get_user_input();
 
 #endif /* End of shell_h */
