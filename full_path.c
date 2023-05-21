@@ -64,10 +64,9 @@ char **full_path(char **tok_path, char **tok_user_input)
                     stringcat(full_path[i], "");
                 }	  
             }
-            full_path[i][length - 2] = '\0';  // Set '\0' at the end of each concatenated string
+            full_path[i][length - 2] = '\0';
         }
         full_path[full_path_count] = NULL;
         return full_path;
     }
 }
-
