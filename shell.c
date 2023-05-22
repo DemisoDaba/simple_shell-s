@@ -15,7 +15,7 @@ int main(int argc, char **argv, char **envp)
 	{
 		print(" ($) ");
 		Input = get_user_input();
-		TokUserInput = tokenize(Input," \n");
+		TokUserInput = tokenize(Input, " \n");
 		if (TokUserInput[0] == NULL)
 		TokUserInput[0] = " \n";
 		FullPath = full(TokPath, TokUserInput[0]);
@@ -52,7 +52,7 @@ int main(int argc, char **argv, char **envp)
 				}
 			}
 		}
-	}	
+	}
 	for (CountA = 0; TokUserInput[CountA] != NULL; CountA++)
 	{
 		free(TokUserInput[CountA]);
@@ -70,4 +70,4 @@ int main(int argc, char **argv, char **envp)
 	free(TokPath);
 	free(FullPath);
 	return (0);
-}		
+}
