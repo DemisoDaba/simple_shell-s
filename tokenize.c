@@ -45,20 +45,22 @@ char **tokenize(char *user_input, char *delimiter)
                         return (NULL);
                     }
                 }
-                Tokens[NumOfTok] = malloc(stringlen(Token));  // Allocate memory for token
+                Tokens[NumOfTok] = malloc(stringlen(Token));  /* Allocate memory for token */
+                Tokens[NumOfTok] = malloc(stringlen(Token));
                 if (Tokens[NumOfTok] == NULL)
                 {
                     perror("Malloc failed to allocate memory for token");
                     free(Tokens);
                     return NULL;
                 }
-                stringcpy(Tokens[NumOfTok], Token);  // Copy token contents
+                stringcpy(Tokens[NumOfTok], Token);  /* Copy token contents */
+                stringcpy(Tokens[NumOfTok], Token);
                 NumOfTok++;
                 Token = strtok(NULL, delimiter);
             }
         }
     }
-    Tokens[NumOfTok] = NULL;  // Set the last element of Tokens to NULL
+    Tokens[NumOfTok] = NULL;  /* Set the last element of Tokens to NULL */
+    Tokens[NumOfTok] = NULL;
     return Tokens;
 }
-
