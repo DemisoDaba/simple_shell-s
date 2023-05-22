@@ -20,3 +20,4 @@ char *stringcpy(char *StringDest, char *StringSource)
 	StringDest[CountA] = '\0';
 	return (StringDest);
 }
+
