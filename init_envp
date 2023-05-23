@@ -1,13 +1,38 @@
 #include "shell.h"
 
+/**
+ * init_envp - Creates a new copy of the envp array with all environment variables.
+ * @envp: The original array of environment variables.
+ *
+ * Return: On success, returns a new array (new_envp) with a copy of all environment variables.
+ *         On failure to allocate memory, returns NULL and prints an error message.
+ *
+ * Description:
+ * - The init_envp function creates a new array, new_envp, and copies all the elements from the envp array into it.
+ * - The new_envp array will have the same contents as the envp array, including all environment variables.
+ * - Memory is allocated dynamically for the new_envp array using malloc, based on the size of the envp array.
+ * - The envp array must be null-terminated, indicating the end of the array.
+ * - If memory allocation using malloc fails, an error message is printed using perror, and NULL is returned.
+ * - Otherwise, each element from the envp array is copied to the new_envp array.
+ * - Finally, the last element of the new_envp array is set to NULL, indicating the end of the array.
+ *
+ * Example usage:
+ * char **new_environment = init_envp(old_environment);
+ * if (new_environment == NULL) {
+ *     // Handle error
+ * } else {
+ *     // Use new_environment array
+ * }
+ */
+
 char **init_envp(char **envp)
 {
 	int CountA, CountB;
 	char **new_envp;
-	
+
 	for (CountA = 0; envp[CountA] != NULL; CountA++)
 	{
-		
+
 	}
 	new_envp = malloc((CountA + 1) * sizeof(char *));
 	if (new_envp == NULL)
@@ -22,6 +47,6 @@ char **init_envp(char **envp)
 			new_envp[CountB] = envp[CountB];
 		}
 			new_envp[CountB] = NULL;
-	}	
+	}
 	return (new_envp);
 }
